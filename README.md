@@ -7,13 +7,13 @@ Use tools like `xdotool` anywhere to simulate pressing `Ctrl`+`F13` etc. to acce
 #### Shortcuts
 |Keys|Function|
 |-|-|
-|`Ctrl`+`F13`|Pen (previous configuration)|
-|`Ctrl`+`F14`|Black Pen|
-|`Ctrl`+`F15`|Blue Pen|
-|`Ctrl`+`F16`|Red Pen|
-|`Ctrl`+`F17`|Highlighter (previous configuration)|
-|`Ctrl`+`F18`|Yellow Highlighter|
-|`Ctrl`+`F19`|Magenta Highlighter|
-|`Ctrl`+`F20`|Light Blue Highlighter|
-|`Ctrl`+`F21`|Ruler (Draw Line)|
-|`Ctrl`+`F22`|Eraser (previous configuration)|
+|`Ctrl`+`F13`|Set pen (previous configuration)|
+|`Ctrl`+`F14`|Set black pen|
+|`Ctrl`+`F15`|Set blue pen|
+|`Ctrl`+`F16`|Set red pen|
+|`Ctrl`+`F17`|Toggle highlighter (previous configuration)|
+|`Ctrl`+`F18`|Toggle yellow highlighter|
+|`Ctrl`+`F19`|Toggle magenta highlighter|
+|`Ctrl`+`F20`|Toggle light blue highlighter|
+|`Ctrl`+`F21`|Toggle ruler (draw line)|
+|`Ctrl`+`F22`|Toggle eraser (previous configuration)|
