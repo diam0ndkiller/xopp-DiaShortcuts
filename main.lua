@@ -25,34 +25,61 @@ local colorList = {
   {"white", 0xffffff}
 }
 
+hl = false
+current_color = 0x000000
+
 function pen_black()
   pen()
   color(0x000000)
+  hl = false
 end
 
 function pen_blue()
   pen()
   color(0x3333cc)
+  hl = false
 end
 
 function pen_red()
   pen()
   color(0xff0000)
+  hl = false
 end
 
 function hl_yellow()
-  highlighter()
-  if (hl) then color(0xffff00) end
+  if (current_color == 0xffff00 and hl) then
+    pen()
+    hl = false
+  else
+    highlighter()
+    color(0xffff00)
+    current_color = 0xffff00
+    hl = true
+  end
 end
 
 function hl_cyan()
-  highlighter()
-  if (hl) then color(0x00c0ff) end
+  if (current_color == 0x00c0ff and hl) then
+    pen()
+    hl = false
+  else
+    highlighter()
+    color(0x00c0ff)
+    current_color = 0x00c0ff
+    hl = true
+  end
 end
 
 function hl_pink()
-  highlighter()
-  if (hl) then color(0xff00ff) end
+  if (current_color == 0xff00ff and hl) then
+    pen()
+    hl = false
+  else
+    highlighter()
+    color(0xff00ff)
+    current_color = 0xff00ff
+    hl = true
+  end
 end
 
 
@@ -80,16 +107,10 @@ function eraser()
   tool("ERASER_DELETE_STROKE")
 end
 
-local hl = false
-
 function highlighter()
-  hl = not hl
-  if (hl) then
-    tool("HIGHLIGHTER")
-  else
-    pen()
-  end
+  tool("HIGHLIGHTER")
 end
+
 
 function pen()
   tool("PEN")
