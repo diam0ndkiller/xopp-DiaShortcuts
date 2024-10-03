@@ -5,9 +5,9 @@ function initUi()
   app.registerUi({["menu"] = "Set red pen", ["callback"] = "pen_red", ["accelerator"] = "<Control>F16"});
   app.registerUi({["menu"] = "Set highlighter", ["callback"] = "highlighter", ["accelerator"] = "<Control>F17"});
   app.registerUi({["menu"] = "Set yellow highlighter", ["callback"] = "hl_yellow", ["accelerator"] = "<Control>F18"});
-  app.registerUi({["menu"] = "Set magenta highlighter", ["callback"] = "hl_pink", ["accelerator"] = "<Control>F19"});
-  app.registerUi({["menu"] = "Set cyan highlighter", ["callback"] = "hl_cyan", ["accelerator"] = "<Control>F20"});
-  app.registerUi({["menu"] = "Set draw line", ["callback"] = "line", ["accelerator"] = "<Control>F21"});
+  app.registerUi({["menu"] = "Set magenta highlighter", ["callback"] = "hl_magenta", ["accelerator"] = "<Control>F19"});
+  app.registerUi({["menu"] = "Set light blue highlighter", ["callback"] = "hl_lightblue", ["accelerator"] = "<Control>F20"});
+  app.registerUi({["menu"] = "Set ruler (draw line)", ["callback"] = "ruler", ["accelerator"] = "<Control>F21"});
   app.registerUi({["menu"] = "Set eraser", ["callback"] = "eraser", ["accelerator"] = "<Control>F22"});
 end
 
@@ -58,7 +58,7 @@ function hl_yellow()
   end
 end
 
-function hl_cyan()
+function hl_lightblue()
   if (current_color == 0x00c0ff and hl) then
     pen()
     hl = false
@@ -70,7 +70,7 @@ function hl_cyan()
   end
 end
 
-function hl_pink()
+function hl_magenta()
   if (current_color == 0xff00ff and hl) then
     pen()
     hl = false
@@ -116,11 +116,11 @@ function pen()
   tool("PEN")
 end
 
-local ruler = false
+local ruler_enabled = false
 
-function line()
-  ruler = not ruler
-  if (ruler) then
+function ruler()
+  ruler_enabled = not ruler_enabled
+  if (ruler_enabled) then
     action("RULER")
   else
     disable_action("RULER")
