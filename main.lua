@@ -104,7 +104,7 @@ function disable_tool(t)
 end
 
 function eraser()
-  tool("ERASER_DELETE_STROKE")
+  tool("ERASER")
 end
 
 function highlighter()
