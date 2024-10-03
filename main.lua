@@ -8,7 +8,7 @@ function initUi()
   app.registerUi({["menu"] = "Toggle magenta highlighter", ["callback"] = "hl_magenta", ["accelerator"] = "<Control>F19"});
   app.registerUi({["menu"] = "Toggle light blue highlighter", ["callback"] = "hl_lightblue", ["accelerator"] = "<Control>F20"});
   app.registerUi({["menu"] = "Toggle ruler (draw line)", ["callback"] = "ruler", ["accelerator"] = "<Control>F21"});
-  app.registerUi({["menu"] = "Set eraser", ["callback"] = "eraser", ["accelerator"] = "<Control>F22"});
+  app.registerUi({["menu"] = "Toggle eraser", ["callback"] = "er_toggle", ["accelerator"] = "<Control>F22"});
 end
 
 local colorList = {
@@ -26,23 +26,27 @@ local colorList = {
 }
 
 hl = false
+er = false
 current_color = 0x000000
 
 function pen_black()
   pen()
   color(0x000000)
+  er = false
   hl = false
 end
 
 function pen_blue()
   pen()
   color(0x3333cc)
+  er = false
   hl = false
 end
 
 function pen_red()
   pen()
   color(0xff0000)
+  er = false
   hl = false
 end
 
@@ -53,6 +57,7 @@ function hl_toggle()
   else
     highlighter()
     hl = true
+    er = false
   end
 end
 
@@ -65,6 +70,7 @@ function hl_yellow()
     color(0xffff00)
     current_color = 0xffff00
     hl = true
+    er = false
   end
 end
 
@@ -77,6 +83,7 @@ function hl_lightblue()
     color(0x00c0ff)
     current_color = 0x00c0ff
     hl = true
+    er = false
   end
 end
 
@@ -89,6 +96,7 @@ function hl_magenta()
     color(0xff00ff)
     current_color = 0xff00ff
     hl = true
+    er = false
   end
 end
 
@@ -115,6 +123,17 @@ end
 
 function eraser()
   tool("ERASER")
+end
+
+function er_toggle()
+  if (er) then
+    pen()
+    er = false
+  else
+    eraser()
+    er = true
+    hl = false
+  end
 end
 
 function highlighter()
