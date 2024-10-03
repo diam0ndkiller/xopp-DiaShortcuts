@@ -3,7 +3,7 @@ function initUi()
   app.registerUi({["menu"] = "Set black pen", ["callback"] = "pen_black", ["accelerator"] = "<Control>F14"});
   app.registerUi({["menu"] = "Set blue pen", ["callback"] = "pen_blue", ["accelerator"] = "<Control>F15"});
   app.registerUi({["menu"] = "Set red pen", ["callback"] = "pen_red", ["accelerator"] = "<Control>F16"});
-  app.registerUi({["menu"] = "Set highlighter", ["callback"] = "highlighter", ["accelerator"] = "<Control>F17"});
+  app.registerUi({["menu"] = "Set highlighter", ["callback"] = "hl_toggle", ["accelerator"] = "<Control>F17"});
   app.registerUi({["menu"] = "Set yellow highlighter", ["callback"] = "hl_yellow", ["accelerator"] = "<Control>F18"});
   app.registerUi({["menu"] = "Set magenta highlighter", ["callback"] = "hl_magenta", ["accelerator"] = "<Control>F19"});
   app.registerUi({["menu"] = "Set light blue highlighter", ["callback"] = "hl_lightblue", ["accelerator"] = "<Control>F20"});
@@ -44,6 +44,16 @@ function pen_red()
   pen()
   color(0xff0000)
   hl = false
+end
+
+function hl_toggle()
+  if (hl) then
+    pen()
+    hl = false
+  else
+    highlighter()
+    hl = true
+  end
 end
 
 function hl_yellow()
