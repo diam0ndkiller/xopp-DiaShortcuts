@@ -3,11 +3,11 @@ function initUi()
   app.registerUi({["menu"] = "Set black pen", ["callback"] = "pen_black", ["accelerator"] = "<Control>F14"});
   app.registerUi({["menu"] = "Set blue pen", ["callback"] = "pen_blue", ["accelerator"] = "<Control>F15"});
   app.registerUi({["menu"] = "Set red pen", ["callback"] = "pen_red", ["accelerator"] = "<Control>F16"});
-  app.registerUi({["menu"] = "Set highlighter", ["callback"] = "hl_toggle", ["accelerator"] = "<Control>F17"});
-  app.registerUi({["menu"] = "Set yellow highlighter", ["callback"] = "hl_yellow", ["accelerator"] = "<Control>F18"});
-  app.registerUi({["menu"] = "Set magenta highlighter", ["callback"] = "hl_magenta", ["accelerator"] = "<Control>F19"});
-  app.registerUi({["menu"] = "Set light blue highlighter", ["callback"] = "hl_lightblue", ["accelerator"] = "<Control>F20"});
-  app.registerUi({["menu"] = "Set ruler (draw line)", ["callback"] = "ruler", ["accelerator"] = "<Control>F21"});
+  app.registerUi({["menu"] = "Toggle highlighter", ["callback"] = "hl_toggle", ["accelerator"] = "<Control>F17"});
+  app.registerUi({["menu"] = "Toggle yellow highlighter", ["callback"] = "hl_yellow", ["accelerator"] = "<Control>F18"});
+  app.registerUi({["menu"] = "Toggle magenta highlighter", ["callback"] = "hl_magenta", ["accelerator"] = "<Control>F19"});
+  app.registerUi({["menu"] = "Toggle light blue highlighter", ["callback"] = "hl_lightblue", ["accelerator"] = "<Control>F20"});
+  app.registerUi({["menu"] = "Toggle ruler (draw line)", ["callback"] = "ruler", ["accelerator"] = "<Control>F21"});
   app.registerUi({["menu"] = "Set eraser", ["callback"] = "eraser", ["accelerator"] = "<Control>F22"});
 end
 
